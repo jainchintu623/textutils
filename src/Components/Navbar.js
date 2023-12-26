@@ -34,3 +34,9 @@ Navbar.prototype ={
     tittle: PropTypes.string.isRequired,
     AboutText: PropTypes.string
 }
+
+Navbar.defaultsProps ={
+    tittle: "set tittle here",
+    AboutText: "about text here"
+}
+
