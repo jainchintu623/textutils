@@ -1,12 +1,12 @@
 
 import './App.css';
-// import About from './Components/About';
+import About from './Components/About';
 import Navbar from './Components/Navbar';
 
 import TextForm from './Components/TextForm';
 import Alert from './Components/Alert';
 import React, {useState}  from 'react'
-
+import { BrowserRouter as Router,Routes, Route } from 'react-router-dom';
 
 function App() {
 const [mode, setMode]=useState('light');
@@ -53,12 +53,21 @@ const toggleModeGray=()=>{
 }
   return (
     <>
-   
+<Router>
 <Navbar tittle= "TextUtils"  mode={mode} toggleMode={toggleMode}  grayMode={grayMode} toggleModeGray={toggleModeGray}/>
 <Alert alert={alert}/>
-<div className="container p-3">
-<TextForm   showAlert={ showAlert}  heading="Enter The text "  mode={mode} grayMode={grayMode}/>
+<div className="container p-3">   
+<Routes>
+<Route path='/' element={  <TextForm  showAlert={ showAlert}  heading="Enter The text "  mode={mode} grayMode={grayMode}/>   }>
+      
+        </Route>
+        <Route path='/About' element={<About AboutText="About Us"/>}>
+      
+         </Route>
+         </Routes>   
 </div>
+
+</Router>
 </>
   );
 }

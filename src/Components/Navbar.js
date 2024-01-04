@@ -12,17 +12,17 @@ export default function Navbar(props) {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item">
-            <a className="nav-link active" href='/' aria-current="page" >Home</a>
+            <a className="nav-link active" href='/' aria-current="page">Home</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/">{props.AboutText}</a>
+            <a className="nav-link" href="/about">About</a>
           </li>
           
          
         </ul>
         <div className={`form-check mx-3 form-switch text-${props.grayMode==='light'?'dark':'dark'}`}>
   <input className="form-check-input" type="checkbox" onClick={props.toggleModeGray} role="switch" id="flexSwitchCheckDefault"/>
-  <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable gray Mode</label>
+  <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Red Mode</label>
 </div>
         <div className={`form-check mx-3 form-switch text-${props.mode==='light'?'dark':'light'}`}>
   <input className="form-check-input" type="checkbox" onClick={props.toggleMode} role="switch" id="flexSwitchCheckDefault"/>
